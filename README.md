@@ -106,7 +106,7 @@ Specifically, examine the ```Min Date Field``` and ```Max Date Field```.
 ### 5. Configure Custom Criteria Online Archive
 
 Click on 'Delete Archive' from the ... icon on the current archive.
-* Please note, the data that was archived has been deleted from cloud object storage now, and is unrecoverable. *
+* Please note, the data that was archived has been deleted from cloud object storage now, and is unrecoverable.
 
 Navigate to Configure Online Archive -> Next.
 
