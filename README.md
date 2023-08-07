@@ -1,5 +1,4 @@
-# MongoDB-OA-DF
-MongoDB Atlas - Online Archive and Data Federation Lab
+# MongoDB Online Archive & Data Federation
 
 ## Prerequisites 
 1. Login to MongoDB Atlas and spin up a dedicated cluster (M10+)
