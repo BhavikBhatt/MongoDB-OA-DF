@@ -89,7 +89,7 @@ Navigate to the 'Online Archive' tab of your cluster -> Configure Online Archive
 
 Set the following:
 
-a. Namespace: ```OA-Lab.sales```
+a. Namespace: ```OA-LAB.sales```
 
 b. DateField: ```saleDate```
 
@@ -112,7 +112,7 @@ Navigate to Configure Online Archive -> Next.
 
 Set the following:
 
-a. Namespace: ```OA-Lab.sales```
+a. Namespace: ```OA-LAB.sales```
 
 b. Custom Critera: 
 ```
@@ -129,8 +129,49 @@ After 1-2 minutes, validate that some data was archived by viewing the archive s
 
 ### 6. Connect to the Online Archive
 
+Click on the 'Connect' button on the Online Archive screen
 
-[WORK IN PROGRESS]
+Select 'Shell' and copy the connection string for the 'Connect to Online Archive' option
+
+Navigate to your command line/terminal, and paste the connection string, with the username replaced with your user
+
+Switch to the ```OA-LAB``` database by entering: 
+```
+use OA-LAB
+```
+
+Run the following query to find all sales in this archive:
+```
+db.sales.aggregate([{$group: { _id: "$storeLocation", count: { $sum: 1}}},{$sort: {count: -1}}])
+```
+
+Note that all documents in this collection (~515) have the store location set to ```London```
+
+### 7. Connect to the Online Archive AND Cluster
+
+Enter ```exit``` in the terminal
+
+Click on the 'Connect' button on the Online Archive screen
+
+Select 'Shell' and copy the connection string for the 'Connect to Cluster and Online Archive' option
+
+Navigate to your command line/terminal, and paste the connection string, with the username replaced with your user
+
+Switch to the ```OA-LAB``` database by entering: 
+```
+use OA-LAB
+```
+
+Run the following query to find all sales:
+```
+db.sales.aggregate([{$group: { _id: "$storeLocation", count: { $sum: 1}}},{$sort: {count: -1}}])
+```
+Note that documents in this collection have store locations in London and other cities as well
+
+
+# Data Federation Lab
+
+
 
 
 
